@@ -1,0 +1,21 @@
+body{
+  text-align: center;
+}
+
+.text-main{
+  text-align: center;
+}
+
+.competitons{
+
+  img{
+    border: 2px solid black;
+    margin: 30px 0px 0px 20px;
+    width: 300px;
+    border-radius: 20px;
+  }
+}
+
+img:hover{
+  transform: scale(1.1);
+}
