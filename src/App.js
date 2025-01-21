@@ -7,10 +7,12 @@ import PremierLeague from './assets/premierLeague/PL.png';
 import Brasileirao from './assets/Brasileirão/brasileirão.png';
 
 import Competitions from './components/competitions';
+import Matches from './components/matches';
 
 function App() {
 
     const [competitionCode, setCompetitionCode] = useState('PL');
+
     const [info, setInfo] = useState(null);
     const [matches, setMatches] = useState(null)
 
@@ -26,34 +28,35 @@ function App() {
                         'X-Auth-Token': 'f723900b174245f29ce35412b6b644a6',
                     },
                 });
-                const result = await response.json();
+                const resultCamp = await response.json();
 
-                console.log(result);
-                setInfo(result);
+                console.log(resultCamp)
+                setInfo(resultCamp);
 
             } catch (error) {
                 console.error('Erro ao buscar dados:', error);
-            }};
-
-            const InfoMacthes = async () => {
-                try{
-                    const response = await fetch( APIMatches,{
-                        headers: {
-                            'X-Auth-Token': 'f723900b174245f29ce35412b6b644a6'
-                        }
-                    })
-                    const resultMatche = await response.json()
-
-                    console.log(resultMatche)
-                    setMatches(resultMatche)
-                }
-                catch (error){
-                    console.error('Erro ao buscar dados das Partidas:', error);
-                }
             }
+        };//BUSCAR DADOS DA COMPETIÇÃO
 
-        InfoCompetitions()
-        InfoMacthes()
+        const InfoMacthes = async () => {
+            try {
+                const response = await fetch(APIMatches, {
+                    headers: {
+                        'X-Auth-Token': 'f723900b174245f29ce35412b6b644a6'
+                    }
+                })
+                const resultMatche = await response.json()
+
+                console.log(resultMatche)
+                setMatches(resultMatche)
+            }
+            catch (error) {
+                console.error('Erro ao buscar dados das Partidas:', error);
+            }
+        } //BUSCAR DADOS DAS PARTIDAS
+
+        InfoCompetitions()//RETORNAR DADOS
+        InfoMacthes()// RETORNAR DADOS
 
     }, [competitionCode]);
 
@@ -79,6 +82,7 @@ function App() {
             </div>
 
             {info && <Competitions InfoDoCamp={info} />}
+            {matches && <Matches InfoDosMatches={matches} />}
 
         </div>
     );
