@@ -1,38 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Matches({ InfoDosMatches }) {
+function Matches({ InfoDosMatches, InfoDoCamp }) {
   const matches = InfoDosMatches.matches || []; // Garante que é um array
+  const [currentMatchday, setCurrentMatchday] = useState(
+    InfoDoCamp.currentSeason.currentMatchday
+  );
 
   // Obtém a data atual
   const now = new Date();
 
-  // Filtra e ordena as partidas futuras
-  const nextMatches = matches
-    .filter((match) => new Date(match.utcDate) > now) // Apenas partidas futuras
-    .sort((a, b) => new Date(a.utcDate) - new Date(b.utcDate)); // Ordena por data
+  // Filtra as partidas da rodada atual
+  const matchesForCurrentMatchday = matches.filter(
+    (match) => match.matchday === currentMatchday
+  );
 
-  // Exibe uma mensagem caso não haja partidas futuras
-  if (nextMatches.length === 0) {
-    return <p>Não há partidas futuras disponíveis no momento.</p>;
-  }
+  // Funções para navegar entre rodadas
+  const handleNextMatchday = () => {
+    setCurrentMatchday((prev) => prev + 1);
+  };
+
+  const handlePreviousMatchday = () => {
+    setCurrentMatchday((prev) => (prev > 1 ? prev - 1 : prev));
+  };
+
+  console.log(InfoDosMatches)
 
   return (
     <div>
       <h2>Próximas Partidas</h2>
-      
-      
-      <input type="text" placeholder="Busque por seu time" />
-      <button>SEARCH</button>
+
+      <div className="Rodadas">
+        <button onClick={handlePreviousMatchday}>Anterior</button>
+        <h2>Rodada Atual: {currentMatchday}</h2>
+        <button onClick={handleNextMatchday}>Próxima</button>
+      </div>
 
       <ul>
-        {nextMatches.map((match) => (
-          <li key={match.id}>
-            <strong>{match.homeTeam.name}</strong> vs{" "}
-            <strong>{match.awayTeam.name}</strong> - Data:{" "}
-            {new Date(match.utcDate).toLocaleString()}
-            <h2></h2>
-          </li>
-        ))}
+        {matchesForCurrentMatchday.length > 0 ? (
+          matchesForCurrentMatchday.map((match) => (
+            <p key={match.id}>
+              <img
+                className="TeamPhoto"
+                src={match.homeTeam.crest}
+                alt="Time da Casa"
+              />
+
+              <strong>{match.homeTeam.name}</strong> vs{" "}
+              <strong>{match.awayTeam.name}</strong>
+
+              <img
+                className="TeamPhoto"
+                src={match.awayTeam.crest}
+                alt="Time Visitante"
+              />
+
+              <h3>{match.score.fullTime.home} X {match.score.fullTime.away}</h3>
+              
+              <p><strong>Vencedor:</strong> {match.score.winner}</p>
+              <p><strong>Status da Partida: </strong>{match.status}</p>
+
+              <br />
+              Data: {new Date(match.utcDate).toLocaleString()}
+              <br /> <br /> <br /> <br /> <br /> <br /> <br />
+            </p>
+          ))
+        ) : (
+          <p>Nenhuma partida encontrada para esta rodada.</p>
+        )}
       </ul>
     </div>
   );

@@ -5,6 +5,8 @@ import './App.css'
 
 import PremierLeague from './assets/premierLeague/PL.png';
 import Brasileirao from './assets/Brasileirão/brasileirão.png';
+import LaLiga from './assets/la_liga/LaLiga.png'
+import Champions from './assets/champions/champions.png'
 
 import Competitions from './components/competitions';
 import Matches from './components/matches';
@@ -62,6 +64,8 @@ function App() {
 
     const loadPremierLeague = () => setCompetitionCode('PL');
     const loadBrasileirao = () => setCompetitionCode('BSA');
+    const loadLaLiga = () => setCompetitionCode('PD')
+    const loadChampions = () => setCompetitionCode('CL')
 
     return (
         <div>
@@ -77,12 +81,14 @@ function App() {
 
                     <img src={PremierLeague} alt="PremierLeague" onClick={loadPremierLeague} />
                     <img src={Brasileirao} alt='Brasileirão' onClick={loadBrasileirao} />
+                    <img src={LaLiga} alt='La Liga' onClick={loadLaLiga} />
+                    <img src={Champions} alt='Champions' onClick={loadChampions} />
 
                 </div>
             </div>
 
             {info && <Competitions InfoDoCamp={info} />}
-            {matches && <Matches InfoDosMatches={matches} />}
+            {matches && info && <Matches InfoDosMatches={matches} InfoDoCamp={info} />}
 
         </div>
     );
