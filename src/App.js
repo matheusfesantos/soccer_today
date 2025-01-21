@@ -82,7 +82,6 @@ function App() {
                     <img src={PremierLeague} alt="PremierLeague" onClick={loadPremierLeague} />
                     <img src={Brasileirao} alt='Brasileirão' onClick={loadBrasileirao} />
                     <img src={LaLiga} alt='La Liga' onClick={loadLaLiga} />
-                    <img src={Champions} alt='Champions' onClick={loadChampions} />
 
                 </div>
             </div>

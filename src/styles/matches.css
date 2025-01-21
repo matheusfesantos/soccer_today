@@ -1,0 +1,36 @@
+.Rodadas{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+
+    button{
+        padding: 20px;
+        border-radius: 20px;
+    }
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+.Matches{
+    color: white;
+    margin: 30px;
+    text-align: center;
+    border: 10px solid brown;
+    background-color: black;
+
+    p{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    img{
+        margin-top: 30px;
+        padding: 2px;
+        text-align:justify;
+        width: 190px;
+    }
+}

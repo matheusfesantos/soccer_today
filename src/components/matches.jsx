@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import '../styles/matches.css'
+
 function Matches({ InfoDosMatches, InfoDoCamp }) {
   const matches = InfoDosMatches.matches || []; // Garante que é um array
   const [currentMatchday, setCurrentMatchday] = useState(
@@ -38,7 +40,7 @@ function Matches({ InfoDosMatches, InfoDoCamp }) {
       <ul>
         {matchesForCurrentMatchday.length > 0 ? (
           matchesForCurrentMatchday.map((match) => (
-            <p key={match.id}>
+            <p className="Matches" key={match.id}>
               <img
                 className="TeamPhoto"
                 src={match.homeTeam.crest}
@@ -59,9 +61,7 @@ function Matches({ InfoDosMatches, InfoDoCamp }) {
               <p><strong>Vencedor:</strong> {match.score.winner}</p>
               <p><strong>Status da Partida: </strong>{match.status}</p>
 
-              <br />
-              Data: {new Date(match.utcDate).toLocaleString()}
-              <br /> <br /> <br /> <br /> <br /> <br /> <br />
+              <h4>Data: {new Date(match.utcDate).toLocaleString()}</h4>
             </p>
           ))
         ) : (
