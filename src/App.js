@@ -12,12 +12,14 @@ function App() {
 
     const [competitionCode, setCompetitionCode] = useState('PL');
     const [info, setInfo] = useState(null);
+    const [matches, setMatches] = useState(null)
 
     useEffect(() => {
 
         const API = `/v4/competitions/${competitionCode}`;
+        const APIMatches = `/v4/competitions/${competitionCode}/matches`;
 
-        const InfoPL = async () => {
+        const InfoCompetitions = async () => {
             try {
                 const response = await fetch(API, {
                     headers: {
@@ -31,9 +33,28 @@ function App() {
 
             } catch (error) {
                 console.error('Erro ao buscar dados:', error);
+            }};
+
+            const InfoMacthes = async () => {
+                try{
+                    const response = await fetch( APIMatches,{
+                        headers: {
+                            'X-Auth-Token': 'f723900b174245f29ce35412b6b644a6'
+                        }
+                    })
+                    const resultMatche = await response.json()
+
+                    console.log(resultMatche)
+                    setMatches(resultMatche)
+                }
+                catch (error){
+                    console.error('Erro ao buscar dados das Partidas:', error);
+                }
             }
-        };
-        InfoPL();
+
+        InfoCompetitions()
+        InfoMacthes()
+
     }, [competitionCode]);
 
     const loadPremierLeague = () => setCompetitionCode('PL');
