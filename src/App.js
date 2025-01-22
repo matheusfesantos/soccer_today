@@ -6,20 +6,25 @@ import PremierLeague from './assets/premierLeague/PL.png';
 import Brasileirao from './assets/Brasileirão/brasileirão.png';
 import LaLiga from './assets/la_liga/LaLiga.png'
 
+import Logo from './assets/logo/logo-bola.png'
+
 import Competitions from './components/competitions';
 import Matches from './components/matches';
+import Scores from './components/scorers';
 
 function App() {
 
     const [competitionCode, setCompetitionCode] = useState('PL');
 
-    const [info, setInfo] = useState(null);
+    const [info, setInfo] = useState(null)
     const [matches, setMatches] = useState(null)
+    const [scorers, setScorers] = useState(null)
 
     useEffect(() => {
 
         const API = `/v4/competitions/${competitionCode}`;
         const APIMatches = `/v4/competitions/${competitionCode}/matches`;
+        const APIScore = `/v4/competitions/${competitionCode}/scorers`
 
         const InfoCompetitions = async () => {
             try {
@@ -35,7 +40,7 @@ function App() {
             } catch (error) {
                 console.error('Erro ao buscar dados:', error);
             }
-        };//BUSCAR DADOS DA COMPETIÇÃO
+        }
 
         const InfoMacthes = async () => {
             try {
@@ -52,10 +57,30 @@ function App() {
             catch (error) {
                 console.error('Erro ao buscar dados das Partidas:', error);
             }
-        } //BUSCAR DADOS DAS PARTIDAS
+        }
 
-        InfoCompetitions()//RETORNAR DADOS
-        InfoMacthes()// RETORNAR DADOS
+        const InfoScore = async () => {
+            try {
+                const response = await fetch(APIScore, {
+                    headers: {
+                        'X-Auth-Token': 'f723900b174245f29ce35412b6b644a6',
+                    },
+                });
+                const resultScore = await response.json();
+
+                console.log(resultScore)
+                setScorers(resultScore)
+
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+            }
+        }
+
+        const InfoTabela = async () => {}
+
+        InfoCompetitions()
+        InfoMacthes()
+        InfoScore()
 
     }, [competitionCode]);
 
@@ -66,7 +91,11 @@ function App() {
     return (
         <div>
             <div className='text-main'>
-                <h1>QUEM JOGA HOJE ?</h1>
+
+                <div className='logo'>
+                    <h1>QUEM JOGA HOJE ?</h1>
+                    <img src={Logo} alt='Logo' />
+                </div>
 
                 <h2>Selecione a competição que você acompanhe
                     e se informe sobre os próximos jogos</h2>
@@ -74,15 +103,16 @@ function App() {
 
             <div>
                 <div className='competitons'>
-                    
+
                     <img src={PremierLeague} alt="PremierLeague" onClick={loadPremierLeague} />
                     <img src={LaLiga} alt='La Liga' onClick={loadLaLiga} />
 
                 </div>
-                
+
             </div>
 
-            {info && <Competitions InfoDoCamp={info} />}
+            {info && <Competitions InfoDoCamp={info}/>}
+            {scorers && <Scores scorers={scorers} />}
             {matches && info && <Matches InfoDosMatches={matches} InfoDoCamp={info} />}
 
         </div>

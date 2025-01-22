@@ -10,6 +10,17 @@ body{
   text-align: center;
 }
 
+.logo{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    width: 200px;
+  }
+}
+
 .competitons{
 
   img{
@@ -24,8 +35,8 @@ body{
     margin-left: 100px;
     width: 500px;
   }
-}
 
-img:hover{
-  transform: scale(1.1);
+  img:hover{
+    transform: scale(1.1);
+  }
 }
