@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import './App.css'
 
-import PremierLeague from './assets/premierLeague/PL.png';
-import Brasileirao from './assets/Brasileirão/brasileirão.png';
-import LaLiga from './assets/la_liga/LaLiga.png'
+import PremierLeague from './assets/leagues/premierLeague/PL.png';
+import Brasileirao from './assets/leagues/Brasileirão/brasileirão.png';
+import LaLiga from './assets/leagues/la_liga/LaLiga.png'
+import Bundesliga from './assets/leagues/bundesliga/bundesliga.png'
+import SerieA from './assets/leagues/italian/seriaAitaliana.png'
 
 import Logo from './assets/logo/logo-bola.png'
 
@@ -87,6 +89,8 @@ function App() {
     const loadPremierLeague = () => setCompetitionCode('PL');
     const loadBrasileirao = () => setCompetitionCode('BSA');
     const loadLaLiga = () => setCompetitionCode('PD')
+    const loadBundesliga = () => setCompetitionCode('BL1')
+    const loadLaSerieA = () => setCompetitionCode('SA')
 
     return (
         <div>
@@ -104,8 +108,11 @@ function App() {
             <div>
                 <div className='competitons'>
 
+                <img src={Brasileirao} alt='Brasileirão' onClick={loadBrasileirao} />
                     <img src={PremierLeague} alt="PremierLeague" onClick={loadPremierLeague} />
                     <img src={LaLiga} alt='La Liga' onClick={loadLaLiga} />
+                    <img src={Bundesliga} alt='Bundesliga' onClick={loadBundesliga} />
+                    <img src={SerieA} alt='Serie A' onClick={loadLaSerieA} />
 
                 </div>
 
