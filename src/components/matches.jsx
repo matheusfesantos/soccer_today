@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-
-import '../styles/matches.css'
+import React, { useState, useEffect } from "react";
+import "../styles/matches.css";
 
 function Matches({ InfoDosMatches, InfoDoCamp }) {
   const matches = InfoDosMatches.matches || []; // Garante que é um array
   const [currentMatchday, setCurrentMatchday] = useState(
     InfoDoCamp.currentSeason.currentMatchday
   );
-
-  // Obtém a data atual
-  const now = new Date();
+  const [animationClass, setAnimationClass] = useState("");
 
   // Filtra as partidas da rodada atual
   const matchesForCurrentMatchday = matches.filter(
@@ -18,15 +15,28 @@ function Matches({ InfoDosMatches, InfoDoCamp }) {
 
   // Funções para navegar entre rodadas
   const handleNextMatchday = () => {
-    setCurrentMatchday((prev) => prev + 1);
+    setAnimationClass("animate-fade-in"); // Adiciona a classe de animação
+    setTimeout(() => {
+      setCurrentMatchday((prev) => prev + 1);
+      setAnimationClass(""); // Remove a classe após a animação
+    }, 500); // Tempo deve coincidir com o CSS
   };
 
   const handlePreviousMatchday = () => {
-    setCurrentMatchday((prev) => (prev > 1 ? prev - 1 : prev));
+    setAnimationClass("animate-fade-in");
+    setTimeout(() => {
+      setCurrentMatchday((prev) => (prev > 1 ? prev - 1 : prev));
+      setAnimationClass("");
+    }, 500);
   };
 
-  console.log(InfoDosMatches)
-
+  useEffect(() => {
+    setAnimationClass("animate-fade-in");
+    setTimeout(() => {
+      setAnimationClass("");
+    }, 500);
+  }, [InfoDosMatches, InfoDoCamp]);
+  
   return (
     <div>
       <h2>Próximas Partidas</h2>
@@ -37,7 +47,7 @@ function Matches({ InfoDosMatches, InfoDoCamp }) {
         <button onClick={handleNextMatchday}>Próxima</button>
       </div>
 
-      <ul>
+      <ul className={`matches-container ${animationClass}`}>
         {matchesForCurrentMatchday.length > 0 ? (
           matchesForCurrentMatchday.map((match) => (
             <p className="Matches" key={match.id}>
@@ -46,21 +56,23 @@ function Matches({ InfoDosMatches, InfoDoCamp }) {
                 src={match.homeTeam.crest}
                 alt="Time da Casa"
               />
-
               <strong>{match.homeTeam.name}</strong> vs{" "}
               <strong>{match.awayTeam.name}</strong>
-
               <img
                 className="TeamPhoto"
                 src={match.awayTeam.crest}
                 alt="Time Visitante"
               />
-
-              <h3>{match.score.fullTime.home} X {match.score.fullTime.away}</h3>
-              
-              <p><strong>Vencedor:</strong> {match.score.winner}</p>
-              <p><strong>Status da Partida: </strong>{match.status}</p>
-
+              <h3>
+                {match.score.fullTime.home} X {match.score.fullTime.away}
+              </h3>
+              <p>
+                <strong>Vencedor:</strong> {match.score.winner}
+              </p>
+              <p>
+                <strong>Status da Partida: </strong>
+                {match.status}
+              </p>
               <h4>Data: {new Date(match.utcDate).toLocaleString()}</h4>
             </p>
           ))

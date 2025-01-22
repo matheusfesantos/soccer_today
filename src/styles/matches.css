@@ -1,36 +1,73 @@
-.Rodadas{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-evenly;
-
-    button{
-        padding: 20px;
-        border-radius: 20px;
-    }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Começa um pouco abaixo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Finaliza na posição original */
+  }
 }
 
-button:hover{
-    transform: scale(1.1);
+.animate-fade-up {
+  animation: fadeInUp 0.5s ease-out; /* A animação dura 0.5s */
 }
 
-.Matches{
-    color: white;
-    margin: 30px;
-    text-align: center;
-    border: 10px solid brown;
-    background-color: black;
+h2 {
+  font-size: 50px;
+}
 
-    p{
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+.Rodadas {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+}
 
-    img{
-        margin-top: 30px;
-        padding: 2px;
-        text-align:justify;
-        width: 190px;
-    }
+.Rodadas button {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: black;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Rodadas button:hover {
+  background-color: green;
+  transform: scale(1.2);
+}
+
+.Matches {
+  color: black;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-align: center;
+  border: 5px solid black;
+  border-radius: 50px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.7s ease-out; /* Aplica a animação de fadeInUp */
+}
+
+.Matches p, .Matches strong, .Matches h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.Matches img {
+  margin-top: 30px;
+  padding: 2px;
+  text-align: justify;
+  width: 190px;
+  transition: transform 0.3s ease;
+}
+
+.Matches img:hover {
+  transform: scale(1.1);
 }

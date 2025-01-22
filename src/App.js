@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 import './App.css'
 
 import PremierLeague from './assets/premierLeague/PL.png';
 import Brasileirao from './assets/Brasileirão/brasileirão.png';
 import LaLiga from './assets/la_liga/LaLiga.png'
-import Champions from './assets/champions/champions.png'
 
 import Competitions from './components/competitions';
 import Matches from './components/matches';
@@ -32,7 +30,6 @@ function App() {
                 });
                 const resultCamp = await response.json();
 
-                console.log(resultCamp)
                 setInfo(resultCamp);
 
             } catch (error) {
@@ -65,7 +62,6 @@ function App() {
     const loadPremierLeague = () => setCompetitionCode('PL');
     const loadBrasileirao = () => setCompetitionCode('BSA');
     const loadLaLiga = () => setCompetitionCode('PD')
-    const loadChampions = () => setCompetitionCode('CL')
 
     return (
         <div>
@@ -78,12 +74,13 @@ function App() {
 
             <div>
                 <div className='competitons'>
-
+                    
                     <img src={PremierLeague} alt="PremierLeague" onClick={loadPremierLeague} />
                     <img src={Brasileirao} alt='Brasileirão' onClick={loadBrasileirao} />
                     <img src={LaLiga} alt='La Liga' onClick={loadLaLiga} />
 
                 </div>
+                
             </div>
 
             {info && <Competitions InfoDoCamp={info} />}

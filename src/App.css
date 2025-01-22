@@ -3,16 +3,24 @@ body{
 }
 
 .text-main{
+  font-size: 2rem;
+  font-weight: bold;
   text-align: center;
 }
 
 .competitons{
 
   img{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
     border: 2px solid black;
     margin: 30px 0px 0px 20px;
-    width: 300px;
     border-radius: 20px;
+  }
+
+  img{
+    margin-left: 100px;
+    width: 500px;
   }
 }
 
