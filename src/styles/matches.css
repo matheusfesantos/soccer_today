@@ -13,6 +13,14 @@
   animation: fadeInUp 0.5s ease-out; /* A animação dura 0.5s */
 }
 
+.MatcheMain{
+  margin: 60px 400px 50px 400px;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
 h2 {
   font-size: 50px;
 }
@@ -29,7 +37,8 @@ h2 {
   color: white;
   font-weight: bold;
   font-size: 20px;
-  padding: 40px;
+  padding: 60px;
+  margin: 0px 0px 20px 0px;
   border-radius: 20px;
   background-color: black;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -41,11 +50,9 @@ h2 {
 }
 
 .Matches {
+  background-color: rgba(255, 255, 255, 0.767);
   color: black;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin: 60px 700px 50px 700px;
   text-align: center;
   border: 5px solid black;
   border-radius: 50px;
@@ -60,14 +67,16 @@ h2 {
   margin-bottom: 20px;
 }
 
+.Matches h3{
+  font-weight: bold;
+  font-size: 4rem;
+  color: black;
+  margin: 10px 400px 0px 400px;
+}
+
 .Matches img {
   margin-top: 30px;
   padding: 2px;
   text-align: justify;
   width: 190px;
-  transition: transform 0.3s ease;
-}
-
-.Matches img:hover {
-  transform: scale(1.1);
 }

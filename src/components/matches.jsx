@@ -36,15 +36,19 @@ function Matches({ InfoDosMatches, InfoDoCamp }) {
       setAnimationClass("");
     }, 500);
   }, [InfoDosMatches, InfoDoCamp]);
-  
+
   return (
     <div>
-      <h2>Próximas Partidas</h2>
+      <div className="MatcheMain">
+        <h2>Atualmente na {InfoDoCamp.currentSeason.currentMatchday} Rodada</h2>
 
-      <div className="Rodadas">
-        <button onClick={handlePreviousMatchday}>Anterior</button>
-        <h2>Rodada Atual: {currentMatchday}</h2>
-        <button onClick={handleNextMatchday}>Próxima</button>
+        <h2>Veja as Partidas</h2>
+
+        <div className="Rodadas">
+          <button onClick={handlePreviousMatchday}>Anterior</button>
+          <h2>Rodada: {currentMatchday}</h2>
+          <button onClick={handleNextMatchday}>Próxima</button>
+        </div>
       </div>
 
       <ul className={`matches-container ${animationClass}`}>
@@ -56,7 +60,7 @@ function Matches({ InfoDosMatches, InfoDoCamp }) {
                 src={match.homeTeam.crest}
                 alt="Time da Casa"
               />
-              <strong>{match.homeTeam.name}</strong> vs{" "}
+              <strong>{match.homeTeam.name} VS</strong>
               <strong>{match.awayTeam.name}</strong>
               <img
                 className="TeamPhoto"

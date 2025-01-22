@@ -11,8 +11,11 @@ function Competitons({ InfoDoCamp }) {
         }, 1000);
     }, [InfoDoCamp]);
 
+    console.log(InfoDoCamp)
+
     return (
-        <div key={InfoDoCamp ? InfoDoCamp.currentSeason.startDate : Date.now()} className={`competitions ${trigger ? 'animate' : ''}`}>
+        <div key={InfoDoCamp ? InfoDoCamp.currentSeason.startDate : 
+        Date.now()} className={`competitions ${trigger ? 'animate' : ''}`}>
             <h2>Nome: {InfoDoCamp.name}</h2>
             <h2>Pais: {InfoDoCamp.area.name}</h2>
             <h3>Temporada Atual:</h3>

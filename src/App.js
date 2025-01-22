@@ -66,7 +66,7 @@ function App() {
     return (
         <div>
             <div className='text-main'>
-                <h1>Bem vindo ao FutebolToday</h1>
+                <h1>QUEM JOGA HOJE ?</h1>
 
                 <h2>Selecione a competição que você acompanhe
                     e se informe sobre os próximos jogos</h2>
@@ -76,7 +76,6 @@ function App() {
                 <div className='competitons'>
                     
                     <img src={PremierLeague} alt="PremierLeague" onClick={loadPremierLeague} />
-                    <img src={Brasileirao} alt='Brasileirão' onClick={loadBrasileirao} />
                     <img src={LaLiga} alt='La Liga' onClick={loadLaLiga} />
 
                 </div>
