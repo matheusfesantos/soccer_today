@@ -87,19 +87,14 @@ Sistema que permite explorar as rodadas da temporada atual.
    yarn install  
    ```  
 
-4. Crie um arquivo `.env` na raiz do projeto e insira sua chave da API Football Data:  
-   ```env
-   REACT_APP_API_KEY=suachaveaqui
-   ```  
-
-5. Inicie o servidor de desenvolvimento:  
+4. Inicie o servidor de desenvolvimento:  
    ```bash
    npm start  
    # ou
    yarn start  
    ```  
 
-6. Acesse o site no navegador:  
+5. Acesse o site no navegador:  
    ```  
    http://localhost:3000  
    ```  
