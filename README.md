@@ -1,21 +1,6 @@
   
 Um site front-end desenvolvido com **React** que utiliza a API **Football Data** para exibir informações detalhadas das principais ligas de futebol do mundo.  
 
----
-
-## **📋 Índice**  
-1. [Sobre o Projeto](#sobre-o-projeto)  
-2. [Funcionalidades](#funcionalidades)  
-3. [Tecnologias Utilizadas](#tecnologias-utilizadas)  
-4. [Como Executar o Projeto](#como-executar-o-projeto)  
-5. [Estrutura de Arquivos](#estrutura-de-arquivos)  
-6. [Capturas de Tela](#capturas-de-tela)  
-7. [Contribuição](#contribuição)  
-8. [Licença](#licença)  
-9. [Contato](#contato)  
-
----
-
 ## **📖 Sobre o Projeto**  
 O **Quem Joga Agora** foi criado para fãs de futebol que desejam informações rápidas e detalhadas sobre as principais ligas do mundo. O site permite que você:  
 - Veja o nome da liga e o país de origem.  
