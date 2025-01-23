@@ -1,19 +1,19 @@
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(30px); /* Começa um pouco abaixo */
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Finaliza na posição original */
+    transform: translateY(0);
   }
 }
 
 .animate-fade-up {
-  animation: fadeInUp 0.5s ease-out; /* A animação dura 0.5s */
+  animation: fadeInUp 0.5s ease-out;
 }
 
-.MatcheMain{
+.MatcheMain {
   margin: 60px 400px 50px 400px;
   border: 5px solid black;
   background-color: white;
@@ -57,7 +57,7 @@ h2 {
   border: 5px solid black;
   border-radius: 50px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-  animation: fadeInUp 0.7s ease-out; /* Aplica a animação de fadeInUp */
+  animation: fadeInUp 0.7s ease-out;
 }
 
 .Matches p, .Matches strong, .Matches h4 {
@@ -67,7 +67,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-.Matches h3{
+.Matches h3 {
   font-weight: bold;
   font-size: 4rem;
   color: black;
@@ -83,7 +83,134 @@ h2 {
 
 .ErrorMessage {
   text-align: center;
-    font-weight: bold;
-    font-size: 50px;
-    color: red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .MatcheMain {
+    margin: 60px 20px;
+  }
+
+  .Matches {
+    margin: 60px 50px;
+  }
+
+  .Matches h3 {
+    font-size: 3rem;
+    margin: 10px 50px;
+  }
+
+  .Rodadas button {
+    padding: 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .MatcheMain {
+    margin: 40px 20px;
+  }
+
+  .Matches {
+    margin: 20px 10px;
+
+    strong{
+      font-size: 22px;
+    }
+
+    h4{
+      font-size: 20px;
+    }
+
+    h3{
+      font-size: 20px;
+    }
+
+    p{
+      font-size: 20px;
+
+      strong{
+        font-size: 20px;
+      }
+    }
+  }
+
+  .Matches h3 {
+    font-size: 30px;
+    margin: 10px 20px;
+  }
+
+  .Rodadas button {
+    padding: 30px;
+    font-size: 16px;
+  }
+
+  .Matches img {
+    width: 80px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .MatcheMain {
+    margin: 20px 10px;
+
+    h2{
+      font-size: 20px;
+    }
+  }
+
+  .Rodadas{
+    button{
+      font-size: 10px;
+    }
+  }
+
+  .Matches {
+    margin: 20px 10px;
+
+    strong{
+      font-size: 10px;
+    }
+
+    h4{
+      font-size: 20px;
+    }
+
+    h3{
+      font-size: 20px;
+    }
+
+    p{
+      font-size: 20px;
+
+      strong{
+        font-size: 20px;
+      }
+    }
+  }
+
+  .Matches h3 {
+    font-size: 20px;
+    margin: 10px 10px;
+  }
+
+  .Rodadas button {
+    padding: 30px;
+    font-size: 14px;
+  }
+
+  .Matches img {
+    width: 30px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
 }

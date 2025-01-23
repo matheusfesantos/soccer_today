@@ -29,17 +29,17 @@
     color: red;
 }
 
-.InfoStatitcs{
+.InfoStatitcs {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    h1{
+    h1 {
         font-size: 4rem;
     }
 }
 
-.statitics{
+.statitics {
     padding: 20px;
     margin: 0px 900px 0px 900px;
     border: 2px solid black;
@@ -49,11 +49,84 @@
     justify-content: center;
     background-color: rgb(37, 72, 189);
 
-    strong{
+    strong {
         font-size: 2.5rem;
     }
 
-    img{
+    img {
         width: 80px;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .statitics {
+        margin: 0px 50px;
+        padding: 15px;
+    }
+
+    .statitics strong {
+        font-size: 2rem;
+    }
+
+    .statitics img {
+        width: 60px;
+    }
+
+    .InfoStatitcs h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .statitics {
+        margin: 0px 20px;
+        padding: 10px;
+    }
+
+    .statitics strong {
+        font-size: 20px;
+    }
+
+    .statitics img {
+        width: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .InfoStatitcs h1 {
+        font-size: 2.5rem;
+    }
+
+    .loadingMessage {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .statitics {
+        margin: 0px 10px;
+        padding: 5px;
+    }
+
+    .statitics strong {
+        font-size: 14px;
+    }
+
+    .statitics img {
+        width: 40px;
+    }
+
+    .InfoStatitcs h1 {
+        font-size: 20px;
+    }
+
+    .loadingMessage {
+        font-size: 16px;
+    }
+
+    .ErrorMessage {
+        font-size: 40px;
     }
 }
