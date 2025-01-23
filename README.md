@@ -10,7 +10,6 @@ O **Quem Joga Agora** foi criado para fãs de futebol que desejam informações 
 
 Tudo isso em uma interface moderna e fácil de usar, alimentada pela API **Football Data**.  
 
----
 ## **📂 Estrutura de Arquivos**  
 ```plaintext
 ├── public/
@@ -35,15 +34,12 @@ Tudo isso em uma interface moderna e fácil de usar, alimentada pela API **Footb
 └── .gitignore
 ```  
 
----
-
 ## **✨ Funcionalidades**  
 - Listar informações detalhadas de ligas e temporadas.  
 - Tabela de artilheiros atualizada da temporada.  
 - Navegação por rodadas para ver os jogos e resultados.  
 - Design responsivo, acessível de qualquer dispositivo.  
 
----
 ## **📸 Capturas de Tela**  
 ### Página Inicial  
 A interface principal com informações das ligas.  
@@ -57,15 +53,11 @@ Exibição dos artilheiros da temporada atual.
 Sistema que permite explorar as rodadas da temporada atual.  
 ![Navegação por Rodadas](https://drive.google.com/uc?export=view&id=17qnFnDv8C0n7nCW5uboQMgbA8v6ka6YC)  
 
----
-
 ## **🛠️ Tecnologias Utilizadas**  
 - **React.js**  
 - **Axios** (para consumo de APIs)  
 - **CSS Modules** (ou outro framework de estilização)  
 - **Football Data API**  
-
----
 
 ## **🚀 Como Executar o Projeto**  
 
@@ -107,27 +99,6 @@ Sistema que permite explorar as rodadas da temporada atual.
    ```  
    http://localhost:3000  
    ```  
-
----
-
-## **🤝 Contribuição**  
-Contribuições são bem-vindas! Para colaborar:  
-1. Faça um fork do repositório.  
-2. Crie uma branch para sua funcionalidade:  
-   ```bash
-   git checkout -b minha-nova-feature
-   ```  
-3. Realize as alterações e faça commit:  
-   ```bash
-   git commit -m "Adiciona nova funcionalidade"
-   ```  
-4. Envie para o repositório remoto:  
-   ```bash
-   git push origin minha-nova-feature
-   ```  
-5. Abra um Pull Request.  
-
----
 
 ## **📞 Contato**  
 - **Autor**: Matheus Ferreira  
