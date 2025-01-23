@@ -42,6 +42,9 @@ Tudo isso em uma interface moderna e fácil de usar, alimentada pela API **Footb
 - Design responsivo, acessível de qualquer dispositivo.  
 
 ## **📸 Capturas de Tela**  
+### Logo Design
+![Eu fazendo a logo](https://drive.google.com/uc?export=view&id=1J0VIxop68W67kSyFx1g1Sx6rMFHUzh44)
+
 ### Página Inicial  
 A interface principal com informações das ligas.  
 ![Página Inicial](https://drive.google.com/uc?export=view&id=1z0u5n_vNXGEEKN8XwcGGvGRQPMmRz7my)  
