@@ -1,70 +1,154 @@
-# Getting Started with Create React App
+Aqui está o README com os links para as imagens que você me forneceu:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# **Quem Joga Agora**  
+Um site front-end desenvolvido com **React** que utiliza a API **Football Data** para exibir informações detalhadas das principais ligas de futebol do mundo.  
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## **📋 Índice**  
+1. [Sobre o Projeto](#sobre-o-projeto)  
+2. [Funcionalidades](#funcionalidades)  
+3. [Tecnologias Utilizadas](#tecnologias-utilizadas)  
+4. [Como Executar o Projeto](#como-executar-o-projeto)  
+5. [Estrutura de Arquivos](#estrutura-de-arquivos)  
+6. [Capturas de Tela](#capturas-de-tela)  
+7. [Contribuição](#contribuição)  
+8. [Licença](#licença)  
+9. [Contato](#contato)  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **📖 Sobre o Projeto**  
+O **Quem Joga Agora** foi criado para fãs de futebol que desejam informações rápidas e detalhadas sobre as principais ligas do mundo. O site permite que você:  
+- Veja o nome da liga e o país de origem.  
+- Confira as datas de início e término da temporada atual.  
+- Explore a tabela de artilheiros da temporada.  
+- Navegue entre as rodadas da temporada atual para acompanhar os jogos.  
 
-### `npm test`
+Tudo isso em uma interface moderna e fácil de usar, alimentada pela API **Football Data**.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+## **📂 Estrutura de Arquivos**  
+```plaintext
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── Header.js
+│   │   ├── LeagueDetails.js
+│   │   ├── TopScorers.js
+│   │   └── MatchdayNavigator.js
+│   ├── services/
+│   │   └── api.js
+│   ├── styles/
+│   │   ├── App.css
+│   │   └── LeagueDetails.css
+│   ├── App.js
+│   ├── index.js
+│   └── .env
+├── package.json
+├── README.md
+└── .gitignore
+```  
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## **✨ Funcionalidades**  
+- Listar informações detalhadas de ligas e temporadas.  
+- Tabela de artilheiros atualizada da temporada.  
+- Navegação por rodadas para ver os jogos e resultados.  
+- Design responsivo, acessível de qualquer dispositivo.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
+## **📸 Capturas de Tela**  
+### Página Inicial  
+A interface principal com informações das ligas.  
+![Página Inicial](https://drive.google.com/uc?export=view&id=1z0u5n_vNXGEEKN8XwcGGvGRQPMmRz7my)  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tabela de Artilheiros  
+Exibição dos artilheiros da temporada atual.  
+![Tabela de Artilheiros](https://drive.google.com/uc?export=view&id=1z0u5n_vNXGEEKN8XwcGGvGRQPMmRz7my)  
 
-### `npm run eject`
+### Navegação por Rodadas  
+Sistema que permite explorar as rodadas da temporada atual.  
+![Navegação por Rodadas](https://drive.google.com/uc?export=view&id=17qnFnDv8C0n7nCW5uboQMgbA8v6ka6YC)  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **🛠️ Tecnologias Utilizadas**  
+- **React.js**  
+- **Axios** (para consumo de APIs)  
+- **CSS Modules** (ou outro framework de estilização)  
+- **Football Data API**  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **🚀 Como Executar o Projeto**  
 
-## Learn More
+### Pré-requisitos  
+- Node.js (versão LTS recomendada)  
+- Gerenciador de pacotes: NPM ou Yarn  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Passos para rodar o projeto:  
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/matheusfesantos/QuemJogaAgora.git
+   ```  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Navegue até o diretório do projeto:  
+   ```bash
+   cd QuemJogaAgora
+   ```  
 
-### Code Splitting
+3. Instale as dependências:  
+   ```bash
+   npm install  
+   # ou
+   yarn install  
+   ```  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Crie um arquivo `.env` na raiz do projeto e insira sua chave da API Football Data:  
+   ```env
+   REACT_APP_API_KEY=suachaveaqui
+   ```  
 
-### Analyzing the Bundle Size
+5. Inicie o servidor de desenvolvimento:  
+   ```bash
+   npm start  
+   # ou
+   yarn start  
+   ```  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+6. Acesse o site no navegador:  
+   ```  
+   http://localhost:3000  
+   ```  
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## **🤝 Contribuição**  
+Contribuições são bem-vindas! Para colaborar:  
+1. Faça um fork do repositório.  
+2. Crie uma branch para sua funcionalidade:  
+   ```bash
+   git checkout -b minha-nova-feature
+   ```  
+3. Realize as alterações e faça commit:  
+   ```bash
+   git commit -m "Adiciona nova funcionalidade"
+   ```  
+4. Envie para o repositório remoto:  
+   ```bash
+   git push origin minha-nova-feature
+   ```  
+5. Abra um Pull Request.  
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## **📞 Contato**  
+- **Autor**: Matheus Ferreira  
+- **GitHub**: [matheusfesantos](https://github.com/matheusfesantos)  
+- **Email**: matheus.seuemail@example.com  
