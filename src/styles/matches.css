@@ -80,3 +80,10 @@ h2 {
   text-align: justify;
   width: 190px;
 }
+
+.ErrorMessage {
+  text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: red;
+}

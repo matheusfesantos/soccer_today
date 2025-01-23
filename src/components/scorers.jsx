@@ -1,40 +1,60 @@
-import React, { useEffect } from "react";
-
-import '../styles/scorers.css'
+import React, { useState, useEffect } from "react";
+import "../styles/scorers.css";
 
 function Scores({ scorers, standings }) {
+    const [loading, setLoading] = useState(true);
+    const [animationFinished, setAnimationFinished] = useState(false);
 
     useEffect(() => {
-        console.log(scorers.scorers[0]); // Logando os dados do primeiro artilheiro
-    }, [scorers]);
+        if (scorers || standings) {
+            setLoading(true);
+            setAnimationFinished(false);
 
-    useEffect(() => {
-        console.log(standings); // Logando os dados da tabela
-      }, [standings]);
+            // Controle do tempo da animação
+            setTimeout(() => {
+                setLoading(false);
+                setTimeout(() => {
+                    setAnimationFinished(true);
+                }, 500);
+            }, 500);
+        }
+    }, [scorers, standings]);
 
     return (
-        <div className="InfoStatitcs">
-            <div className="TopGoals">
-                <h1>Artilheiros</h1>
-                <ul>
-                    {scorers && scorers.scorers && scorers.scorers.length > 0 ? (
-                        scorers.scorers.map((scorer, index) => (
-                            <p key={index}>
-                                <div className="statitics">
-                                    <strong>{index + 1}. {scorer.player.name}</strong>
-                                    <img src={scorer.team.crest} alt="Image-Team" /> - { } |
-                                    <strong>
-                                        Gols: {scorer.goals} | </strong><strong>
-                                        Assistências: {scorer.assists} <br />
-                                    </strong>
-                                </div>
-                            </p>
-                        ))
-                    ) : (
-                        <p>Não há dados de artilheiros disponíveis.</p>
-                    )}
-                </ul>
-            </div>
+        <div className={`InfoStatitcs ${loading ? "fade-in" : "fade-out"}`}>
+            {!animationFinished ? (
+                <div className="loadingMessage">
+                    <p>Carregando informações...</p>
+                </div>
+            ) : (
+                <>
+                    {/* Artilheiros */}
+                    <div className="TopGoals">
+                        <ul>
+                            {scorers?.scorers?.length > 0 ? (
+                                scorers.scorers.map((scorer, index) => (
+                                    <li key={index} className="statitics">
+                                        <strong>
+                                            {index + 1}. {scorer?.player?.name || "Nome não disponível"}
+                                        </strong>
+                                        <img
+                                            src={scorer?.team?.crest || ""}
+                                            alt="Imagem do time"
+                                        />
+                                        -
+                                        <strong>
+                                            Gols: {scorer?.goals || 0} | Assistências:{" "}
+                                            {scorer?.assists || 0}
+                                        </strong>
+                                    </li>
+                                ))
+                            ) : (
+                                <p className="ErrorMessage">Não há dados de disponíveis.</p>
+                            )}
+                        </ul>
+                    </div>
+                </>
+            )}
         </div>
     );
 }

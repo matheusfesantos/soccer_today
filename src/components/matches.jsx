@@ -81,7 +81,7 @@ function Matches({ InfoDosMatches, InfoDoCamp }) {
             </p>
           ))
         ) : (
-          <p>Nenhuma partida encontrada para esta rodada.</p>
+          <p className="ErrorMessage">Nenhuma partida encontrada para esta rodada.</p>
         )}
       </ul>
     </div>

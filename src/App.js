@@ -21,12 +21,14 @@ function App() {
     const [info, setInfo] = useState(null)
     const [matches, setMatches] = useState(null)
     const [scorers, setScorers] = useState(null)
+    const [standings, setStandings] = useState(null)
 
     useEffect(() => {
 
         const API = `/v4/competitions/${competitionCode}`;
         const APIMatches = `/v4/competitions/${competitionCode}/matches`;
         const APIScore = `/v4/competitions/${competitionCode}/scorers`
+        const APIStandings = `/v4/competitions/${competitionCode}/standings`
 
         const InfoCompetitions = async () => {
             try {
@@ -53,7 +55,6 @@ function App() {
                 })
                 const resultMatche = await response.json()
 
-                console.log(resultMatche)
                 setMatches(resultMatche)
             }
             catch (error) {
@@ -70,7 +71,6 @@ function App() {
                 });
                 const resultScore = await response.json();
 
-                console.log(resultScore)
                 setScorers(resultScore)
 
             } catch (error) {
@@ -78,11 +78,27 @@ function App() {
             }
         }
 
-        const InfoTabela = async () => {}
+        const InfoTabela = async () => {
+            try {
+                const response = await fetch(APIStandings, {
+                    headers: {
+                        'X-Auth-Token': 'f723900b174245f29ce35412b6b644a6',
+                    },
+                });
+                const resultStandings = await response.json();
+
+                console.log(resultStandings)
+                setStandings(resultStandings)
+
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+            }
+        }
 
         InfoCompetitions()
         InfoMacthes()
         InfoScore()
+        InfoTabela()
 
     }, [competitionCode]);
 
@@ -119,7 +135,7 @@ function App() {
             </div>
 
             {info && <Competitions InfoDoCamp={info}/>}
-            {scorers && <Scores scorers={scorers} />}
+            {scorers && standings && <Scores scorers={scorers} standings={standings} />}
             {matches && info && <Matches InfoDosMatches={matches} InfoDoCamp={info} />}
 
         </div>
