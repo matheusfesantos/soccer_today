@@ -1,5 +1,5 @@
 # **![Logo do Projeto](https://github.com/matheusfesantos/soccer_today/blob/main/public/Logo.png.png)**  
-**Quem Joga Agora**  
+**Quem Joga Hoje ?**  
 Um site front-end desenvolvido com **React** que utiliza a API **Football Data** para exibir informações detalhadas das principais ligas de futebol do mundo.  
 
 ## **📖 Sobre o Projeto**  
