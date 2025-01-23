@@ -1,8 +1,4 @@
-Aqui está o README com os links para as imagens que você me forneceu:
-
----
-
-# **Quem Joga Agora**  
+  
 Um site front-end desenvolvido com **React** que utiliza a API **Football Data** para exibir informações detalhadas das principais ligas de futebol do mundo.  
 
 ---
