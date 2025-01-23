@@ -70,12 +70,12 @@ Sistema que permite explorar as rodadas da temporada atual.
 ### Passos para rodar o projeto:  
 1. Clone o repositório:  
    ```bash
-   git clone https://github.com/matheusfesantos/QuemJogaAgora.git
+   git clone https://github.com/matheusfesantos/soccer_today.git
    ```  
 
 2. Navegue até o diretório do projeto:  
    ```bash
-   cd QuemJogaAgora
+   cd QuemJogaHoje
    ```  
 
 3. Instale as dependências:  
