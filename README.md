@@ -58,10 +58,8 @@ Sistema que permite explorar as rodadas da temporada atual.
 ![Navegação por Rodadas](https://drive.google.com/uc?export=view&id=17qnFnDv8C0n7nCW5uboQMgbA8v6ka6YC)  
 
 ## **🛠️ Tecnologias Utilizadas**  
-- **React.js**  
-- **Axios** (para consumo de APIs)  
-- **CSS Modules** (ou outro framework de estilização)  
-- **Football Data API**  
+[![My Skills](https://skillicons.dev/icons?i=react&theme=dark)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=javascript,html,css&theme=dark)](https://skillicons.dev)
 
 ## **🚀 Como Executar o Projeto**  
 
