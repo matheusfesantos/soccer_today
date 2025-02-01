@@ -100,4 +100,4 @@ Sistema que permite explorar as rodadas da temporada atual.
 ## **📞 Contato**  
 - **Autor**: Matheus Ferreira  
 - **GitHub**: [matheusfesantos](https://github.com/matheusfesantos)  
-- **Email**: matheus.seuemail@example.com
+- **Email**: theucontatos@gmail.com
