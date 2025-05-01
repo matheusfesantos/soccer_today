@@ -1,6 +1,6 @@
 # **![Logo do Projeto](https://github.com/matheusfesantos/soccer_today/blob/main/public/Logo.png.png)**  
 **Quem Joga Hoje ?**  
-Um site front-end desenvolvido com **React** que utiliza a API **Football Data** para exibir informações detalhadas das principais ligas de futebol do mundo.  
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-2965F1?style=for-the-badge&logo=css3&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## **📖 Sobre o Projeto**  
 O **Quem Joga Agora** foi criado para fãs de futebol que desejam informações rápidas e detalhadas sobre as principais ligas do mundo. O site permite que você:  
